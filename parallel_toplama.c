@@ -3,7 +3,7 @@
 # include <time.h>
 # define N 100000000
 int main(){
-    long long sum=0
+    long long sum=0;
     clock_t start =clock();
 
     omp_set_num_threads(4);
