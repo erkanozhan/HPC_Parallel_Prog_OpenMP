@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <time.h>
-# define N 1000000000
+# define N 4000000000LL // İşlemcinizin gücüne göre buradaki değeri düşürebilirsiniz genelde en baştaki rakamı daha düşük seçerek hesaplama süresini çok beklemeden görebilirsiniz
 int main(){
-    long long sum=0;
+    double sum=0;
     clock_t start=clock();
-    for (int i=0; i<N;i++) {
+    for (long long int i=0; i<N;i++) {
         sum+=i;
     }
     clock_t end=clock();

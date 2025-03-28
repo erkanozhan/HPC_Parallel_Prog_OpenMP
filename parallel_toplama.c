@@ -1,14 +1,19 @@
 # include <stdio.h>
 # include <omp.h>
 # include <time.h>
-# define N 1000000000
-int main(){
-    long long sum=0;
-    clock_t start =clock();
+# define N 4000000000LL
 
+                      /* İşlemcinizin gücüne göre buradaki değeri düşürebilirsiniz genelde en baştaki 4 rakamını daha düşük seçerek 
+                      hesaplama süresini çok beklemeden görebilirsiniz.
+                      Burada tabii kiparalel hesaplama yapıldığı için seriyi de belki hiç sonuç çıkarmayan hesaplamalar burada 
+                      hemen sonuç verebilir.*/
+
+int main(){
+    double sum=0;
+    clock_t start =clock();
     omp_set_num_threads(4);
     #pragma omp parallel for reduction(+:sum)
-    for (int i=0;i<N;i++){
+    for (long long int i=0;i<N;i++){
         sum+=i;
     }
 clock_t end=clock();
