@@ -1,7 +1,7 @@
 # include <stdio.h>
 # include <omp.h>
 # include <time.h>
-# define N 100000000
+# define N 1000000000
 int main(){
     long long sum=0;
     clock_t start =clock();
